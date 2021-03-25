@@ -11,6 +11,11 @@
 		410A97C6260C9D59007AC698 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A97C5260C9D59007AC698 /* ContentView.swift */; };
 		410A97C8260C9D5E007AC698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 410A97C7260C9D5E007AC698 /* Assets.xcassets */; };
 		410A97CB260C9D5E007AC698 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 410A97CA260C9D5E007AC698 /* Preview Assets.xcassets */; };
+		410A97D3260C9D84007AC698 /* ActiveGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A97D2260C9D84007AC698 /* ActiveGridView.swift */; };
+		410A97D5260C9D93007AC698 /* PlayerGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A97D4260C9D93007AC698 /* PlayerGrid.swift */; };
+		410A97D7260C9DA4007AC698 /* Alignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A97D6260C9DA4007AC698 /* Alignments.swift */; };
+		410A97D9260C9DD9007AC698 /* ActivePlayerMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A97D8260C9DD9007AC698 /* ActivePlayerMarkerView.swift */; };
+		410A97DB260C9E09007AC698 /* PlayerBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A97DA260C9E09007AC698 /* PlayerBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		410A97C7260C9D5E007AC698 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		410A97CA260C9D5E007AC698 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		410A97CC260C9D5E007AC698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		410A97D2260C9D84007AC698 /* ActiveGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGridView.swift; sourceTree = "<group>"; };
+		410A97D4260C9D93007AC698 /* PlayerGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerGrid.swift; sourceTree = "<group>"; };
+		410A97D6260C9DA4007AC698 /* Alignments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alignments.swift; sourceTree = "<group>"; };
+		410A97D8260C9DD9007AC698 /* ActivePlayerMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePlayerMarkerView.swift; sourceTree = "<group>"; };
+		410A97DA260C9E09007AC698 /* PlayerBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,11 @@
 			children = (
 				410A97C3260C9D59007AC698 /* AlignmentGuidesApp.swift */,
 				410A97C5260C9D59007AC698 /* ContentView.swift */,
+				410A97D2260C9D84007AC698 /* ActiveGridView.swift */,
+				410A97D4260C9D93007AC698 /* PlayerGrid.swift */,
+				410A97D6260C9DA4007AC698 /* Alignments.swift */,
+				410A97DA260C9E09007AC698 /* PlayerBox.swift */,
+				410A97D8260C9DD9007AC698 /* ActivePlayerMarkerView.swift */,
 				410A97C7260C9D5E007AC698 /* Assets.xcassets */,
 				410A97CC260C9D5E007AC698 /* Info.plist */,
 				410A97C9260C9D5E007AC698 /* Preview Content */,
@@ -138,8 +153,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				410A97D7260C9DA4007AC698 /* Alignments.swift in Sources */,
 				410A97C6260C9D59007AC698 /* ContentView.swift in Sources */,
+				410A97DB260C9E09007AC698 /* PlayerBox.swift in Sources */,
 				410A97C4260C9D59007AC698 /* AlignmentGuidesApp.swift in Sources */,
+				410A97D5260C9D93007AC698 /* PlayerGrid.swift in Sources */,
+				410A97D3260C9D84007AC698 /* ActiveGridView.swift in Sources */,
+				410A97D9260C9DD9007AC698 /* ActivePlayerMarkerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
