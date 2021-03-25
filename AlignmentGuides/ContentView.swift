@@ -25,7 +25,6 @@ struct ContentView: View {
                             if objectCount >= count.index {
                                 if count.index == activeIndex {
                                     PlayerBox(name: count.index.description, isActive: true)
-                                        .transition(AnyTransition.identity)
                                         .alignmentGuide(HorizontalAlignment.markerAlignment, computeValue: { dimension in
                                             dimension[AlignmentObject.alignment(for: activeIndex).playerAlignment.horizontal]
                                         })
@@ -49,7 +48,6 @@ struct ContentView: View {
             .padding(markerSize)
             
             ActivePlayerMarkerView(size: markerSize)
-                .transition(AnyTransition.identity)
                 .alignmentGuide(HorizontalAlignment.markerAlignment, computeValue: { dimension in
                     dimension[AlignmentObject.alignment(for: activeIndex).markerAlignment.horizontal]
                 })
