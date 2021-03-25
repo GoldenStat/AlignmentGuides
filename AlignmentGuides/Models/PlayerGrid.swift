@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 /// to make the code a little clearer
 ///
 /// PlayerGrid(0,0).index == 1
@@ -36,4 +35,20 @@ struct PlayerGrid {
             self.col = adjustedIndex % Self.cols
         }
     }
+    
+}
+
+import SwiftUI
+
+extension PlayerGrid {
+    var tokenEdge: Edge.Set? {
+        if row == 0 {
+            return .top
+        }
+        if row == Self.rows - 1{
+            return .bottom
+        }
+        return nil
+    }
+
 }

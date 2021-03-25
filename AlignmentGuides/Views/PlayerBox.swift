@@ -13,7 +13,7 @@ struct PlayerBox: View {
     var borderColor: Color { isActive ? .primary : .secondary }
     var body: some View {
         Color.green
-            .cornerRadius(20)
+            .cornerRadius(12)
             .opacity(isActive ? 0.8 : 0.4)
             .frame(width: 100, height: 200)
             .overlay(Text(name)

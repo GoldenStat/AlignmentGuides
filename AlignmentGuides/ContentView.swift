@@ -10,10 +10,18 @@ import SwiftUI
 struct ContentView: View {
     @State private var activeIndex = 1
     
+    @Namespace var token
+    @Namespace var noToken
+    
     let objectCount = 5 // must be smaller than PlayerGrid.maxObjects
 
-    let markerSize : CGFloat = 80
+    let markerSize : CGFloat = 40
         
+    func ns(index: Int) -> Namespace.ID {
+        index == activeIndex ?
+        token : noToken
+    }
+    
     var body: some View {
         ZStack(alignment: .markerAlignment) {
             VStack {
@@ -21,45 +29,29 @@ struct ContentView: View {
                     HStack
                     {
                         ForEach(0 ..< PlayerGrid.cols) { col in
-                            let count = PlayerGrid(row: row, col: col)
-                            if objectCount >= count.index {
-                                if count.index == activeIndex {
-                                    PlayerBox(name: count.index.description, isActive: true)
-                                        .alignmentGuide(HorizontalAlignment.markerAlignment, computeValue: { dimension in
-                                            dimension[AlignmentObject.alignment(for: activeIndex).playerAlignment.horizontal]
-                                        })
-                                        .alignmentGuide(VerticalAlignment.markerAlignment, computeValue: { dimension in
-                                            dimension[AlignmentObject.alignment(for: activeIndex).playerAlignment.vertical]
-                                        })
-                                        .onTapGesture {
-                                                activeIndex = count.index
-                                        }
-                                } else {
-                                    PlayerBox(name: count.index.description, isActive: false)
-                                        .onTapGesture {
-                                            activeIndex = count.index
-                                        }
-                                }
+                            let gridItem = PlayerGrid(row: row, col: col)
+                            if objectCount >= gridItem.index,
+                               let edge = gridItem.tokenEdge {
+                                PlayerBox(name: gridItem.index.description, isActive: gridItem.index == activeIndex)
+                                    .onTapGesture {
+                                        activeIndex = gridItem.index
+                                    }
+                                    .tokenize(edge: edge,
+                                              nameSpace: ns(index: gridItem.index))
                             }
                         }
                     }
                 }
             }
             .padding(markerSize)
-            
-            ActivePlayerMarkerView(size: markerSize)
-                .alignmentGuide(HorizontalAlignment.markerAlignment, computeValue: { dimension in
-                    dimension[AlignmentObject.alignment(for: activeIndex).markerAlignment.horizontal]
-                })
-                .alignmentGuide(VerticalAlignment.markerAlignment, computeValue: { dimension in
-                    dimension[AlignmentObject.alignment(for: activeIndex).markerAlignment.vertical]
-                })
+            TokenView(size: markerSize)
+                .matchedGeometryEffect(id: String.tokenNameSpace, in: token)
         }
         .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
-
     }
-        
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

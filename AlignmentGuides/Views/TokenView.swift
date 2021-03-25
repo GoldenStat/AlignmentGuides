@@ -1,5 +1,5 @@
 //
-//  ActivePlayerMarkerView.swift
+//  TokenView.swift
 //  AlignmentGuides
 //
 //  Created by Alexander Völz on 25.03.21.
@@ -8,16 +8,19 @@
 import SwiftUI
 
 /// the marker shows who is "active", e.g. the dealer
-struct ActivePlayerMarkerView: View {
+struct TokenView: View {
     var size : CGFloat
+    var color: Color = .primary
+    
     var body: some View {
         Circle()
+            .fill(color)
             .frame(width: size, height: size)
     }
 }
 
-struct ActivePlayerMarkerView_Previews: PreviewProvider {
+struct TokenView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivePlayerMarkerView(size: 80)
+        TokenView(size: 80)
     }
 }
